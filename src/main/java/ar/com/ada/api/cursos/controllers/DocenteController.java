@@ -22,6 +22,14 @@ public class DocenteController {
     // datos.
     @PostMapping("/api/docentes")
     public ResponseEntity<GenericResponse> crearDocente(@RequestBody Docente docente) {
+        
+        if (docenteService.docenteExiste(docente)) {
+            GenericResponse rError = new GenericResponse();
+            rError.isOk = false;
+            rError.message = "Este docente ya existe";
+            
+            return ResponseEntity.badRequest().body(rError);
+        }
 
         docenteService.crearDocente(docente);
 
