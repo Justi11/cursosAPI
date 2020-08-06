@@ -25,8 +25,8 @@ public class EstudianteService {
 
     public boolean crearEstudiante(Estudiante estudiante) {
 
-        if (estudianteRepo.existsEstudiante(estudiante.getPaisId().getValue(),
-                estudiante.getTipoDocumentoId().getValue(), estudiante.getDocumento())) {
+        if (estudianteRepo.existsEstudiante(estudiante.getPaisId(), estudiante.getTipoDocumentoId().getValue(),
+                estudiante.getDocumento())) {
 
             return false;
         }
@@ -39,7 +39,7 @@ public class EstudianteService {
             Date fechaNacimiento) {
         Estudiante estudiante = new Estudiante();
         estudiante.setNombre(nombre);
-        estudiante.setPaisId(paisEnum);
+        estudiante.setPaisId(paisEnum.getValue());
         estudiante.setTipoDocumentoId(TipoDocuEnum);
         estudiante.setDocumento(documento);
         estudiante.setFechaNacimiento(fechaNacimiento);
@@ -68,8 +68,8 @@ public class EstudianteService {
 
     public boolean estudianteExiste(Estudiante estudiante) {
 
-        if (estudianteRepo.existsEstudiante(estudiante.getPaisId().getValue(),
-                estudiante.getTipoDocumentoId().getValue(), estudiante.getDocumento()))
+        if (estudianteRepo.existsEstudiante(estudiante.getPaisId(), estudiante.getTipoDocumentoId().getValue(),
+                estudiante.getDocumento()))
             return true;
         else
             return false;
