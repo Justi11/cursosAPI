@@ -22,7 +22,7 @@ public class DocenteController {
     // datos.
     @PostMapping("/api/docentes")
     public ResponseEntity<GenericResponse> crearDocente(@RequestBody Docente docente) {
-        
+
         if (docenteService.docenteExiste(docente)) {
             GenericResponse rError = new GenericResponse();
             rError.isOk = false;
@@ -38,7 +38,7 @@ public class DocenteController {
         r.message = "Docente creada con exito";
         r.id = docente.getDocenteId();
 
-        // Aca vamos a usar Ok
+        // Aca vamos a usar O.
         // Cuando se crea, generalmetnte para los puristas, se usa el
         // CreatedAtAction(201)
         return ResponseEntity.ok(r);

@@ -1,4 +1,3 @@
-
 package ar.com.ada.api.cursos.controllers;
 
 import org.springframework.http.ResponseEntity;
@@ -19,6 +18,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import ar.com.ada.api.cursos.entities.*;
 import org.springframework.web.bind.annotation.RequestParam;
+
 @RestController
 public class CursoController {
 
@@ -54,7 +54,7 @@ public class CursoController {
   // llamar a una fucion
   // f(3,5) = 5 + 3 * 2 = 11
 
- // sin filtro: /api/cursos
+  // sin filtro: /api/cursos
   // con filtro sin docentes: /api/cursos?sinDocentes=true
   // /api/cursos?docentes=null
   // sinDocentes es un queryParam que nos permite FILTRAR
